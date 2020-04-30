@@ -18,7 +18,10 @@ export default class TimeBlockForm extends React.Component{
       user_id: 1, 
       full:false, 
       scheduled_users: []}
-    axios.post('/api/appointments', appointment).then(res => this.props.getAllAppointments())
+    axios.post('/api/appointments', appointment).then(res => {
+      this.props.toggleAddForm()
+      this.props.getAllAppointments()
+    })
     .catch(e=> console.log(e))
   }
 

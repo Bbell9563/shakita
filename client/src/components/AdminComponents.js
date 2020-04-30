@@ -115,7 +115,7 @@ export class Appointments extends React.Component {
     return (
       <div style={{ textAlign: 'left' }}>
         <AddButton onClick={this.toggleAddForm}>{addForm ? 'Done' : 'Create A TimeSlot'}</AddButton>
-        {addForm ? <AddTimeForm getAllAppointments={this.getAllAppointments} /> : <></>}
+        {addForm ? <AddTimeForm getAllAppointments={this.getAllAppointments} toggleAddForm={this.toggleAddForm} /> : <></>}
         {appointments.map(a =>
           <UserHolder key={`appointment-${a.id}`}>
             <div style={{width:'25%'}}>
