@@ -5,4 +5,12 @@ Rails.application.routes.draw do
   namespace :api do
     resources :appointments
   end
+
+  namespace :api do
+    get '/reserved_appoinments', to: 'appointments#reserved_appointments'
+  end
+
+  namespace :api do 
+    resources :users
+  end
 end

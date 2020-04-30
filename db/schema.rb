@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2020_04_27_221309) do
     t.string "date"
     t.string "kind"
     t.string "status"
+    t.boolean "full"
+    t.text "scheduled_users"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_appointments_on_user_id"

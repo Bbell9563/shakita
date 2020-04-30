@@ -16,7 +16,31 @@ export const Holder = styled.div`
   border-radius: 10px;  
   overflow:hidden;
   padding: 2%;
+`
+export const UserHolder = styled.div`
+  background-color: rgba(255,255,255, .3);
+  border-radius: 20px;
+  margin-top: 1%;
+  padding: 1%;
+  text-align: left;
+  display:flex;
+  justify-content: space-between;
+`
 
+export const Button = styled.div`
+  padding: 1%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 20px;
+`
+
+export const AddButton = styled(Button)`
+  color:#333;
+  border: 2px solid #333;
+  &:hover{
+    background-color: #333;
+    color: white;
+  }
 `
 
 export const Header = styled.div`

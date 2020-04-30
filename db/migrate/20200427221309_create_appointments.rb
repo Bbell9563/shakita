@@ -6,7 +6,8 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.string :date
       t.string :kind
       t.string :status
-
+      t.boolean :full
+      t.text :scheduled_users
       t.timestamps
     end
   end

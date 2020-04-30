@@ -13,6 +13,10 @@ class Api::AppointmentsController < ApplicationController
     end
   end
 
+  def reserved_appointments
+
+  end 
+
   def destroy
     @appointment.destroy
   end
