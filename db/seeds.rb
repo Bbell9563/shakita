@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(
-  name: 'Brianna Bell',
-  age: '21',
-  gender: 'female',
-  email: 'Bbell9563@gmail.com',
-  password: 'Sadiegirl8',
+  name: 'Master',
+  age: '1000',
+  gender: 'Other',
+  email: 'admin@email.com',
+  password: 'Password',
   role: 'admin',
   medical_history: 'Nothing Relavent',
   phone: '(801) 946-4684',
