@@ -1,8 +1,9 @@
 import React from 'react'
-import {FormHeader, FormInput, Label, SubmitButton} from '../styles/ToggleFormStyle'
+import { FormHeader, Label, SubmitButton } from '../styles/ToggleFormStyle'
 import axios from 'axios'
+import { Input, Select, Dropdown, Form } from 'semantic-ui-react'
 
-export default class TimeBlockForm extends React.Component{
+export default class TimeBlockForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
@@ -13,43 +14,48 @@ export default class TimeBlockForm extends React.Component{
     ${document.getElementById('endType').value}
     `
     let appointment = {
-      time: time, 
-      date: document.getElementById('date').value, 
-      user_id: 1, 
-      full:false, 
-      scheduled_users: []}
+      time: time,
+      date: document.getElementById('date').value,
+      user_id: 1,
+      full: false,
+      scheduled_users: []
+    }
     axios.post('/api/appointments', appointment).then(res => {
       this.props.toggleAddForm()
       this.props.getAllAppointments()
     })
-    .catch(e=> console.log(e))
+      .catch(e => console.log(e))
   }
 
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <FormHeader>Create TimeSlot</FormHeader>
           <div>
-            <Label>Start (HH:MM)</Label>
-            <FormInput  id='start' style={{width:'10%'}}/>
-            <select id='startType' style={{width:'10%', textAlign:'center', height:'50px', fontSize:'20px', marginRight:'1%'}}>
-              <option value='AM'>AM</option>
-              <option value='PM'>PM</option>
-            </select>
-            <Label>End (HH:MM)</Label>
-            <FormInput  id='end' style={{width:'10%'}}/>
-            <select id='endType' style={{width:'10%', textAlign:'center', height:'50px', fontSize:'20px', marginRight:'1%'}}>
-              <option value='AM'>AM</option>
-              <option value='PM'>PM</option>
-            </select>
-            <Label>Date (MM/DD/YYYY)</Label>
-            <FormInput id='date' style={{width:'20%'}}/>
+            <div >
+              <Form.Group widths='equal'>
+                <Form.Input id='start'  label='Start (HH:MM)' />
+                <Dropdown selection id='endType' options={dateOptions} label='type'/>
+              </Form.Group>
+              <Form.Group widths='equal'>
+                <Form.Input id='end' label='End (HH:MM)' />
+                <Select id='endType' options={dateOptions} />
+              </Form.Group>
+                <Form.Input id='date' type='date' label='Date'/>
+            </div>
+
             <SubmitButton onClick={this.handleSubmit}>Add</SubmitButton>
           </div>
-        </form>
+        </Form>
       </div>
     )
   }
 }
+
+const dateOptions = [
+  { key: 'AM', value: 'AM', text: 'AM' },
+  { key: 'PM', value: 'PM', text: 'PM' },
+
+]

@@ -1,6 +1,7 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider"
 import { InfoHolder, ImageHolder, Name, Info, Label, AppointmentHolder, Nothing, Header, Edit, Delete , Other, Buttons} from '../styles/UserStyle'
+import {Image} from 'semantic-ui-react'
 
 
 class User extends React.Component {
@@ -13,7 +14,7 @@ class User extends React.Component {
           <div style={{ display: 'flex', justifyContent: 'center' }} >
             <div>
               <ImageHolder>
-                <img style={style.photo} src={user.image} />
+                <Image style={style.photo} src={user.image} />
               </ImageHolder>
               <Name>{user.name}</Name>
             </div>

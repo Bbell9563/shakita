@@ -84,6 +84,7 @@ const Button = styled.div`
   font-family: 'Electrolize';
   font-weight: bolder;
   font-size: 20px;
+  cursor: pointer;
 `
 
 export const Delete = styled(Button)`

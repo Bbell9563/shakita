@@ -1,8 +1,9 @@
 import React from 'react'
 import { AuthConsumer, } from "../providers/AuthProvider";
 import { Link, withRouter, } from 'react-router-dom'
-import { NavHolder, style, ImageHolder, LoginLink, RegisterLink, IconDiv } from '../styles/NavStyle'
+import { NavHolder, LoginLink, RegisterLink, IconDiv } from '../styles/NavStyle'
 import Logo from '../images/Shakti.png'
+import { Image } from 'semantic-ui-react'
 
 class Navbar extends React.Component {
 
@@ -16,14 +17,17 @@ class Navbar extends React.Component {
             <LoginLink onClick={() => handleLogout(this.props.history)}>
               Logout
             </LoginLink>
-            <RegisterLink as={Link} to='/userpage' >
-              {user.name}
+            {user.role === 'admin' ?
+              <></> :
+              <RegisterLink as={Link} to='/userpage' >
+                {user.name}
+              </RegisterLink>
+            }
+            {user.role === 'admin' ?
+              <RegisterLink as={Link} to='/adminpanel' >
+                Admin Panel
             </RegisterLink>
-            {user.role === 'admin' ? 
-            <RegisterLink as={Link} to='/adminpanel' >
-              Admin Panel
-            </RegisterLink>
-            : <></>
+              : <></>
             }
           </div>
         </div>
@@ -50,10 +54,11 @@ class Navbar extends React.Component {
     return (
       <NavHolder>
         <div >
-          <IconDiv as={Link} to='/' >
-
-            <img src={Logo} style={{ width: '150px'}} />
-            <div style={{bottom:'10px', right:'20px', display:'flex', flexDirection:'column', justifyContent:'flex-end', marginLeft: '-35px', fontSize:'10px', marginBottom:'14px'}}>Yoga And Holistics</div>
+          <IconDiv as={Link} to='/' style={{ color: 'black' }}>
+            <div style={{width:'150px'}}>
+              <Image src={Logo} />
+            </div>
+            <div style={{ bottom: '10px', right: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', marginLeft: '-35px', fontSize: '10px', marginBottom: '14px' }}>Yoga And Holistics</div>
 
           </IconDiv>
         </div>
