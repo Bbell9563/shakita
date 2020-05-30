@@ -3,7 +3,7 @@ import { AuthConsumer, } from "../providers/AuthProvider";
 import { Link, withRouter, } from 'react-router-dom'
 import { NavHolder, LoginLink, RegisterLink, IconDiv } from '../styles/NavStyle'
 import Logo from '../images/Shakti.png'
-import { Image } from 'semantic-ui-react'
+import { Image, Icon } from 'semantic-ui-react'
 
 class Navbar extends React.Component {
 
@@ -38,12 +38,21 @@ class Navbar extends React.Component {
       return (
         <div style={{ width: '50%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '1% 0 1% 0' }}>
-            <LoginLink as={Link} to='/login'>
+            {/* <LoginLink as={Link} to='/login'>
               Login
             </LoginLink>
             <RegisterLink as={Link} to='/register'>
               Register
-            </RegisterLink>
+            </RegisterLink> */}
+            <div>
+              <div style={{textAlign:'center', fontSize:'20px', fontWeight:'bolder'}}>Contact Us</div>
+            <div style={{width:'200px', display:'flex', justifyContent:'space-between', marginTop:'10px'}}>
+              <a href='mailto:ladashton@gmail.com' style={{ color: 'black', marginLeft: '2%' }} ><Icon name='mail' size='big' /></a>
+              <a href='tel:3852272091' style={{ color: 'black', marginLeft: '2%' }} ><Icon name='phone' size='big' /></a>
+              <a href='https://www.facebook.com/Shaktillc' style={{ color: 'black', marginLeft: '2%' }} ><Icon name='facebook official' size='big' /></a>
+            </div>
+            </div>
+
           </div>
         </div>
       )
@@ -55,10 +64,12 @@ class Navbar extends React.Component {
       <NavHolder>
         <div >
           <IconDiv as={Link} to='/' style={{ color: 'black' }}>
-            <div style={{width:'150px'}}>
+            <div style={{ width: '150px' }}>
               <Image src={Logo} />
             </div>
-            <div style={{ bottom: '10px', right: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', marginLeft: '-35px', fontSize: '10px', marginBottom: '14px' }}>Yoga And Holistics</div>
+            <div style={{ bottom: '10px', right: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', marginLeft: '-60px', fontSize: '10px', marginBottom: '14px' }}>
+              HEALTH, WELLNESS & BEAUTY
+            </div>
 
           </IconDiv>
         </div>

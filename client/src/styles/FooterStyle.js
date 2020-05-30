@@ -12,7 +12,7 @@ export const FooterHolder = styled.div`{
 
 export const FooterItem = styled.div`{
   margin: 1%;
-  font-size: 16px;
+  font-size: 20px;
   display: flex;
   padding: 0 1% 0 1%;
   @media(max-width: 600px) {
@@ -21,7 +21,7 @@ export const FooterItem = styled.div`{
 }`
 
 export const AtIcon = styled.div`
-  font-size: 16px;
+  font-size: 25px;
   @media(max-width: 600px) {
     font-size: 10px;
   }

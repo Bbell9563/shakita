@@ -10,7 +10,7 @@ export const HomeHeader = styled.div`
   }
 `
 export const Holder = styled.div`
-  margin: 2% 10%;
+  
   @media(max-width: 600px) {
     margin: 2% 2%;
   }
@@ -18,7 +18,7 @@ export const Holder = styled.div`
 export const Title = styled.div`
   text-align:center;
   background-color: rgba(105, 89, 100, .3);
-  margin: 0 10%;
+  margin: 10px 2%;
   border-radius: 10px;
   padding:1%;
   @media(max-width: 600px) {
