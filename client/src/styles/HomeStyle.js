@@ -4,7 +4,7 @@ export const HomeHeader = styled.div`
   font-size: 40px;
   font-family: 'Parisienne', cursive;
   font-weight: bolder;
-  padding:1%;
+  padding:2%;
   @media(max-width: 600px) {
     font-size: 30px;
   }
