@@ -6,7 +6,7 @@ export const HomeHeader = styled.div`
   font-weight: bolder;
   padding:2%;
   @media(max-width: 600px) {
-    font-size: 30px;
+    font-size: 20px;
   }
 `
 export const Holder = styled.div`
@@ -32,7 +32,7 @@ export const Main = styled.div`
   font-size: 20px;
   font-weight: bolder;
   @media(max-width: 600px) {
-    font-size: 20px;
+    font-size: 12px;
   }
 `
 
@@ -42,7 +42,7 @@ export const Sub = styled.div`
   font-weight: bolder;
   margin-top: 2%;
   @media(max-width: 600px) {
-    font-size: 40px;
+    font-size: 25px;
   }
 `
 
@@ -50,5 +50,8 @@ export const Option = styled.div`
   font-family: 'Electrolize';
   font-size: 20px;
   margin: 2%;
-  display:flex
+  display:flex;
+  @media(max-width: 600px) {
+    font-size: 12px;
+  }
 `
