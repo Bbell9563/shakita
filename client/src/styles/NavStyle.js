@@ -2,12 +2,33 @@ import styled from 'styled-components'
 import Sparkle from '../images/sparkles.jpg'
 
 export const NavHolder = styled.div`{
-  padding: .5%;
   color:black;
   display:flex;
   justify-content: space-between;
   padding: 10px 3%;
+  @media(max-width: 600px){
+    padding: 5px;
+  }
 }`
+
+export const SidebarButton = styled.div`
+  display:none;
+  @media(max-width: 600px) {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    marginLeft:10px;
+    cursor:pointer;
+    margin-right:20px;
+    margin-top: 30px;
+  }
+`
+
+export const ContactInfo = styled.div`
+  @media(max-width: 600px){
+    display:none;
+  }
+`
 
 export const style = {
   link:{
@@ -24,6 +45,31 @@ export const IconDiv = styled.div`
   display:flex;
   text-decoration:none;
   color:black;
+  width:300px;
+  @media(max-width: 600px){
+    width: 250px;
+  }
+`
+export const IconPhoto = styled.div`
+  width:150px;
+  @media(max-width: 600px){
+    width:120px;
+  }
+`
+
+
+export const IconWords = styled.div`
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: -60px;
+  font-size: 10px;
+  margin-bottom: 14px;
+  @media(max-width: 600px){
+    margin-left: -40px;
+  }
 `
 
 export const LoginLink = styled.div`
